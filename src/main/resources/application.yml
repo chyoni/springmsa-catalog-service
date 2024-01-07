@@ -12,6 +12,11 @@ spring:
         format_sql: true
         show_sql: true
         default_batch_fetch_size: 500
+    defer-datasource-initialization: true
+  sql:
+    init:
+      mode: always
+
   datasource:
     url: jdbc:h2:tcp://localhost/~/h2/msacatalog
     driver-class-name: org.h2.Driver
@@ -27,5 +32,3 @@ eureka:
   instance:
     instance-id: ${spring.cloud.client.hostname}:${spring.application.instance_id:${random.value}}
 
-greeting:
-  message: Welcome to the Simple E-commerce.
